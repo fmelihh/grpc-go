@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-option go_package = "github.com/sitozonpc/common/orders";
+option go_package = "github.com/sikozonpc/common/orders";
+
 
 service OrderService {
     rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
@@ -23,10 +24,10 @@ message CreateOrderResponse {
     string status = 1;
 }
 
-message GetOrderResponse {
+message GetOrderRequest {
     int32 customerID = 1;
 }
 
-message CreateOrderResponse {
+message GetOrderResponse {
     repeated Order orders = 1;
 }
