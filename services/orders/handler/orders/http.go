@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"grpc-go/services/common/genproto/orders"
 	"grpc-go/services/common/util"
 	"grpc-go/services/orders/types"
@@ -23,6 +24,8 @@ func (h *OrdersHttpHandler) RegisterRouter(router *http.ServeMux) {
 }
 
 func (h *OrdersHttpHandler) CreateOrder(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("request triggered")
+
 	var req orders.CreateOrderRequest
 	err := util.ParseJSON(r, &req)
 	if err != nil {

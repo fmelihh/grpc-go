@@ -21,7 +21,7 @@ func (s *httpServer) Run() error {
 	orderHandler := handler.NewHttpOrderHandler(orderService)
 	orderHandler.RegisterRouter(router)
 
-	log.Println("Starting server on ", s.addr)
+	log.Println("Starting http server on", s.addr)
 
 	return http.ListenAndServe(s.addr, router)
 }
